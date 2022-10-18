@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2022 a las 01:31:36
+-- Tiempo de generación: 18-10-2022 a las 02:50:11
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -29,24 +29,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `autos` (
   `id` int(11) NOT NULL,
+  `id_comprador` int(50) NOT NULL,
   `autos` varchar(50) NOT NULL,
   `modelo` int(4) NOT NULL,
   `color` varchar(50) NOT NULL,
   `km` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `autos`
---
-
-INSERT INTO `autos` (`id`, `autos`, `modelo`, `color`, `km`) VALUES
-(22, 'Ford focus', 2003, 'verde', 141231),
-(23, 'Eco sport', 2008, 'Negro', 230000),
-(24, 'Chevrolet Corsa', 2008, 'Rojo', 179000),
-(25, 'Renault Clio', 2011, 'Gris osuro', 67000),
-(26, 'Citroen Berlingo', 2011, 'Dorada', 90000),
-(27, 'Fiat Palio', 1998, 'Naranja', 270000),
-(28, 'Chevrolet Cruze', 2022, 'Negro', 0);
 
 -- --------------------------------------------------------
 
@@ -65,13 +53,7 @@ CREATE TABLE `comprador` (
 --
 
 INSERT INTO `comprador` (`id_comprador`, `nombre`, `email`) VALUES
-(22, 'Jonathan', 'jona.ugarte10@gmail.com'),
-(23, 'Diego Ugarte', 'diego.ugarte@gmail.com'),
-(24, 'Juan Gonzalez', 'juan_gonzalez@outlook.com'),
-(25, 'Delfina Perez', 'delfi.perez@gmail.com'),
-(26, 'Maria Dominguez', 'mari:dom@gmail.com'),
-(27, 'Marcos Lorenzo', 'marcos.lorenzo@gmail.com'),
-(28, 'Laura Recalde', 'laura_recalde22@gmail.com');
+(0, 'Jonathan', 'jona.ugarte10@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -100,7 +82,8 @@ INSERT INTO `usuarios` (`id`, `email`, `password`) VALUES
 -- Indices de la tabla `autos`
 --
 ALTER TABLE `autos`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_comprador` (`id_comprador`);
 
 --
 -- Indices de la tabla `comprador`
@@ -123,7 +106,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `autos`
 --
 ALTER TABLE `autos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -136,10 +119,10 @@ ALTER TABLE `usuarios`
 --
 
 --
--- Filtros para la tabla `comprador`
+-- Filtros para la tabla `autos`
 --
-ALTER TABLE `comprador`
-  ADD CONSTRAINT `comprador_ibfk_1` FOREIGN KEY (`id_comprador`) REFERENCES `autos` (`id`);
+ALTER TABLE `autos`
+  ADD CONSTRAINT `autos_ibfk_1` FOREIGN KEY (`id_comprador`) REFERENCES `comprador` (`id_comprador`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

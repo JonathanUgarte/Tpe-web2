@@ -74,15 +74,10 @@ class autoController{
   }
 }
 
-function filter () {
-  if (isset($_POST['selected']) && (!empty($_POST['selected']))){
-      $selected = $_POST['selected'];
-      $autosbyid = $this->model->getAutoByComprador($selected);
-      $this->view->resultFilter($autosbyid);
-  }
+function showAutosByComprador($compradorbyid){
+  $autosbyid = $this->model->getAutosByComprador($compradorbyid);
+  $this->view->showAutosByComprador($autosbyid, $compradorbyid);
 }
 
-
-    
 }
 

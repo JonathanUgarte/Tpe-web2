@@ -34,10 +34,10 @@ function showDetail($autosbyid){
   }
 
   
-function resultFilter($autosbyid){
+function showAutosByComprador($autosbyid, $compradorbyid){
+    $this->smarty->assign('compradorbyid', $compradorbyid);
     $this->smarty->assign('autosbyid', $autosbyid);
-      $this->smarty->display('resultFilter.tpl');
-
+    $this->smarty->display('resultFilter.tpl');
 }
 
 }

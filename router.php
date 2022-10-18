@@ -76,7 +76,8 @@ switch($params[0]){
             break;
         case 'filter':
               $autoController = new autoController();
-              $autoController->filter();
+              $compradorbyid= $params[1];
+              $autoController->showAutosByComprador($compradorbyid);
               break;
 
     case 'compradores':
