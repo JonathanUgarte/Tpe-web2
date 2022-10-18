@@ -60,14 +60,7 @@ class autoModel{
         
     }
 
-    function getAutosByComprador($compradorby){
-        $query = $this->db->prepare( "SELECT a.id, a.autos, a.modelo, a.color, a.km, c.id_comprador AS comprador FROM autos a JOIN comprador c ON a.id_comprador=c.id_comprador  WHERE comprador=?");
-        $query -> execute([$compradorby]);
-        $autosbyid = $query->fetchAll(PDO::FETCH_OBJ); 
-        return $autosbyid;
-    }
-
-
+    
 
 
 }

@@ -27,18 +27,4 @@
   </tbody>
 </table>
 
-
-<form method="POST" action="filter">
-    <h3> Selecciona una vendedor para ver sus autos</h3>
-<label>Nombre del Vendedor</label>
-<select  name="comprador">
-{{foreach from=$compradorbyid item=$comprador}}
-    <option value="{$comprador->id}">{$comprador->nombre}</option>
-  {{/foreach}}
-</select>
-<button type="submit">Enviar</button>
-</form>
-
-
-
 {include file="footer.tpl"}

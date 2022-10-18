@@ -74,10 +74,7 @@ class autoController{
   }
 }
 
-function showAutosByComprador($compradorbyid){
-  $autosbyid = $this->model->getAutosByComprador($compradorbyid);
-  $this->view->showAutosByComprador($autosbyid, $compradorbyid);
-}
+
 
 }
 
