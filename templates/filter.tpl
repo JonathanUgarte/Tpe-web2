@@ -1,5 +1,0 @@
-{include file="header.tpl"}
-
-
-
-
