@@ -6,8 +6,6 @@
 <ul>
    <li>{$autos->autos}</li>
 </ul>
-{else}
-    <p>No posee autos</p>
 {/if}
 {/foreach}
 
