@@ -54,10 +54,14 @@ public function editComprador($id_comprador) {
     header("Location: " . BASE_URL. "compradores");
 }
 }
+function filter(){
+  if(isset ($_POST['selected'])&&(!empty($_POST['selected']))){
+      $selected = $_POST['selected'];
+      $autosbycomprador = $this->model->getAutosAndCompradores($selected);
+      $this->view->showVentas($autosbycomprador);
+  }
+}
 
-
-  
- 
 }
   
   

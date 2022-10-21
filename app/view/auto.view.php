@@ -33,8 +33,7 @@ function showDetail($autosbyid){
     $this->smarty->display('detail.tpl');
   }
 
-  function showVentas($autosbyid, $compradorbyid){
-    $this->smarty->assign('compradorbyid', $compradorbyid);
+  function showVentas($autosbyid){
     $this->smarty->assign('autosbyid', $autosbyid);
     $this->smarty->display('formListVentas.tpl');
 

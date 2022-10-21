@@ -10,14 +10,14 @@ class autoController{
     private $model;
     private $view;
     private $helper;
-    private$compradorModel;
+   
 
    
     public function __construct() {
       $this->model = new autoModel();
       $this->view = new autoView();
       $this->helper = new loginHelper();
-      $this->compradorModel = new compradorModel();
+     
     }
 
 
@@ -72,11 +72,13 @@ class autoController{
       header("Location: " . BASE_URL."autos");
   }
 }
-
- function showVentas($id_comprador){
-  $autosbyid=$this->model->getAutos($id_comprador);
-  $compradorbyid=$this->compradorModel->getCompradores();
-  $this->view->showVentas($autosbyid,$compradorbyid);
+function filter(){
+  if(isset ($_POST['selected'])&&(!empty($_POST['selected']))){
+      $selected = $_POST['selected'];
+      $autosbyid = $this->model->getAutosAndCompradores($selected);
+      $this->view->showVentas($autosbyid);
+  }
 }
+
 
 }

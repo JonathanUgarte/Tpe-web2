@@ -74,10 +74,9 @@ switch($params[0]){
             $id = $params[1];
             $autoController->editAuto($id);
             break;
-    case 'listVentas':
-            $autoController = new autoController();
-            $id_comprador = $params[1];
-            $autoController->showVentas($id_comprador);
+    case 'filter':
+            $compradorController = new compradorController();
+            $compradorController->filter();
             break;
 
     case 'compradores':

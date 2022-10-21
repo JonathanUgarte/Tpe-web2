@@ -27,4 +27,11 @@ function showEdit($compradorbyid){
     $this->smarty->assign('compradorbyid', $compradorbyid);
     
 }
+
+function showVentas($autosbycomprador){
+    $this->smarty->assign('autosbycomprador', $autosbycomprador);
+    $this->smarty->display('formListVentas.tpl');
+
+
+  }
 }
