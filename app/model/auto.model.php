@@ -62,13 +62,7 @@ class autoModel{
         
     }
 
-    function getAutosAndCompradores($selected){
-        $query = $this->db->prepare("SELECT * FROM autos a INNER JOIN  compradores b ON a.id_comprador_fk = b.id_comprador WHERE a.id_comprador_fk=?");
-        $query->execute(array($selected));
-        $autosbyid = $query->fetchAll(PDO::FETCH_OBJ);
-    
-        return $autosbyid;
-    }
+
 
     
 

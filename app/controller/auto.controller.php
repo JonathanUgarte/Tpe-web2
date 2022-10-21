@@ -72,13 +72,7 @@ class autoController{
       header("Location: " . BASE_URL."autos");
   }
 }
-function filter(){
-  if(isset ($_POST['selected'])&&(!empty($_POST['selected']))){
-      $selected = $_POST['selected'];
-      $autosbyid = $this->model->getAutosAndCompradores($selected);
-      $this->view->showVentas($autosbyid);
-  }
-}
+
 
 
 }
