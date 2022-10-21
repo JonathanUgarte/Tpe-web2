@@ -6,6 +6,7 @@
   <thead>
     <tr>
     <th scope='col'>Id</th>
+    <th scope='col'>Id-Comprador</th>
     <th scope='col'>Auto</th>
     <th scope='col'>Modelo</th>
     <th scope='col'>Color</th>
@@ -19,6 +20,7 @@
   {foreach from=$autosbyid item=$autos}
     <tr>
     <td>{$autos->id}</td>
+    <td>{$autos->id_comprador}</td>
     <td>{$autos->autos}</td>
     <td>{$autos->modelo}</td>
     <td>{$autos->color}</td>

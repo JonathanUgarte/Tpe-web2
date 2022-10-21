@@ -1,6 +1,10 @@
 {if $logged}
 <form class="form" action="add" method="POST">
 <div class="mb-3">
+<label class="form-label">ID-Comprador</label>
+<input type="text" name="id_comprador" class="form-control">
+</div>
+<div class="mb-3">
 <label class="form-label">Autos</label>
 <input type="text" name="autos" class="form-control">
 </div>

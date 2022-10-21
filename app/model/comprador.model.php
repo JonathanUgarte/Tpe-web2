@@ -19,9 +19,9 @@ class compradorModel{
        return $compradorbyid;
    }
 
-   public function insertComprador( $nombre, $email) {
-    $query = $this->db->prepare('INSERT INTO comprador (nombre , email) VALUES (?, ?)');
-    $query->execute([ $nombre, $email]);
+   public function insertComprador($id_comprador, $nombre, $email) {
+    $query = $this->db->prepare('INSERT INTO comprador (id_comprador,nombre , email) VALUES (?,?, ?)');
+    $query->execute([$id_comprador, $nombre, $email]);
     return $this->db->lastInsertId();
   }
 
@@ -47,5 +47,4 @@ public function updateComprador($id_comprador, $nombre, $email) {
     
 }
 
-   
-   }
+}

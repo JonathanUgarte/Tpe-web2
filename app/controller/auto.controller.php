@@ -40,14 +40,13 @@ class autoController{
 
     function addAutos() {
       // TODO: validar entrada de datos
-     
-
-      $auto = $_POST['autos'];
+      $id_comprador = $_POST['id_comprador'];
+      $autos = $_POST['autos'];
       $modelo = $_POST['modelo'];
       $color = $_POST['color'];
       $km = $_POST['km'];
 
-      $this->model->insertAuto($auto, $modelo, $color,$km);
+      $this->model->insertAuto( $id_comprador,$autos, $modelo, $color,$km);
 
       header("Location: " . BASE_URL. "autos"); 
   }
@@ -74,7 +73,10 @@ class autoController{
   }
 }
 
-
-
+ function showVentas($id_comprador){
+  $autosbyid=$this->model->getAutos($id_comprador);
+  $compradorbyid=$this->compradorModel->getCompradores();
+  $this->view->showVentas($autosbyid,$compradorbyid);
 }
 
+}

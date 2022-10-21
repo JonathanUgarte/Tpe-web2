@@ -27,10 +27,10 @@ class compradorController{
 
   function addComprador() {
     // TODO: validar entrada de datos
-
+      $id_comprador=$_POST['id_comprador'];
       $nombre=$_POST['nombre'];
       $email=$_POST['email'];
-      $this->model->insertComprador($nombre, $email);
+      $this->model->insertComprador($id_comprador,$nombre, $email);
       header("Location: " . BASE_URL. "compradores"); 
 }
 

@@ -26,5 +26,17 @@
     {/foreach}
   </tbody>
 </table>
+<h5>VER AUTOS DE CADA COMPRADOR</h5>
+    <form class="form" action="listVentas" method="POST">
+    <select name="id_comprador">
+    <option selected>Elegi Comprador</option>
+    {foreach from= $compradorbyid item= $comprador}
+    <option value="{$comprador->id_comprador}" name="id_comprador">{$comprador->nombre}</option>
+    {/foreach}
+    </select>
+    <a class="btn btn-secondary mt-0" type="button" href="listVentas/{$comprador->id_comprador}" value="{$comprador->id_comprador}">Ir</a>
+    </form>
 
-{include file="footer.tpl"}
+   
+    {include file="footer.tpl"}
+

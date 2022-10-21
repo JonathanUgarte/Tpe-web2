@@ -74,11 +74,11 @@ switch($params[0]){
             $id = $params[1];
             $autoController->editAuto($id);
             break;
-        case 'filter':
-              $autoController = new autoController();
-              $compradorbyid= $params[1];
-              $autoController->showAutosByComprador($compradorbyid);
-              break;
+    case 'listVentas':
+            $autoController = new autoController();
+            $id_comprador = $params[1];
+            $autoController->showVentas($id_comprador);
+            break;
 
     case 'compradores':
             $compradorController = new compradorController();
@@ -103,12 +103,8 @@ switch($params[0]){
             $compradorController->editComprador($id_comprador);
             break;
 
-    
-        
 
-    
-
-    default:
-    echo('404');
-    break;   
+         default:
+         echo('404');
+         break;   
 }

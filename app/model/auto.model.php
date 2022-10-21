@@ -20,10 +20,21 @@ class autoModel{
     
     }
 
+     function getAuto($id_comprador){
+
+        $query = $this->db->prepare("SELECT * FROM autos WHERE id_comprador=?");
+        $query->execute([$id_comprador]);
     
-    public function insertAuto($autos, $modelo, $color, $km) {
-        $query = $this->db->prepare("INSERT INTO autos (autos, modelo, color, km) VALUES (?, ?, ?, ?)");
-        $query->execute([$autos, $modelo, $color, $km]);
+        $autosbyid = $query->fetchAll(PDO::FETCH_OBJ);
+
+       return $autosbyid;
+
+    }
+
+    
+    public function insertAuto( $id_comprador ,$autos, $modelo, $color, $km) {
+        $query = $this->db->prepare("INSERT INTO autos ( id_comprador,autos, modelo, color, km) VALUES (?,?, ?, ?, ?)");
+        $query->execute([ $id_comprador,$autos, $modelo, $color, $km]);
 
         return $this->db->lastInsertId();
     }
@@ -43,6 +54,7 @@ class autoModel{
     }
 
 
+
     function getAutobyid($id){
         
         $query = $this->db->prepare("SELECT * FROM autos WHERE id=?");
@@ -59,6 +71,8 @@ class autoModel{
         $query->execute([$id, $autos, $modelo, $color, $km]);
         
     }
+
+
 
     
 
