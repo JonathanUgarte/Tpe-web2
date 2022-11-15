@@ -19,7 +19,7 @@
     <td>{$comprador->email}</td>
     {if $logged}
       <td ><a class="btn btn-danger mt-0" href='deleteComprador/{$comprador->id_comprador}' type='button'>Eliminar</a></td>
-      <td ><a class="btn btn-success mt-0"   href='formEditComprador/{$comprador->id_comprador}' type='button'>Editar</a></td>
+      <td ><a class="btn btn-success mt-0"   href='formEditCompradores/{$comprador->id_comprador}' type='button'>Editar</a></td>
     {/if}
     
     </tr>

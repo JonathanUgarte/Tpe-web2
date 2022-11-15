@@ -29,8 +29,6 @@ class autoModel{
         return $this->db->lastInsertId();
     }
 
-
-
     function deleteAutoById($id) {
         $query = $this->db->prepare('DELETE FROM autos WHERE id = ?');
         $query->execute([$id]);
@@ -42,8 +40,6 @@ class autoModel{
         $autosbyid = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
         return $autosbyid;
     }
-
-
 
     function getAutobyid($id){
         

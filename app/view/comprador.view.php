@@ -18,7 +18,8 @@ class compradorView{
 
 }
 
-function showFormEdit(){
+function showFormEdit($compradorbyid){
+    $this->smarty->assign('compradorbyid', $compradorbyid);
     $this->smarty->display('formEditComprador.tpl');
 
 }

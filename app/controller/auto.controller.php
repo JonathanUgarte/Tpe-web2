@@ -55,9 +55,9 @@ class autoController{
       $this->model->deleteAutoById($id);
       header("Location: " . BASE_URL."autos");
   }
-  function showFormEditAutos(){
+  function showFormEditAutos($autosbyid){
     session_start();
-    $this->view->showFormEdit();
+    $this->view->showFormEdit($autosbyid);
   }
 
    public function editAuto($id) {
@@ -73,6 +73,13 @@ class autoController{
   }
 }
 
+function formEditAutomovil($id)
+{ //Traigo los datos de este id y los inserto el en form
+    $autosbyid = $this->model->getAutobyid($id);
+    $this->view->showFormEdit($autosbyid);
 
+
+
+}
 
 }

@@ -67,10 +67,16 @@ switch($params[0]){
         $id = $params[1];
         $autoController->deleteAuto($id);
         break;
+        
+    case 'formEditAutomovil':
+        $autoController = new autoController();
+        $id = $params[1];
+        $autoController->formEditAutomovil($id);
+        break;
 
     case 'formEdit':
             $autoController = new autoController();
-            $autoController->showFormEditAutos();
+            $autoController->showFormEditAutos($autosbyid);
             $id = $params[1];
             $autoController->editAuto($id);
             break;
@@ -97,10 +103,16 @@ switch($params[0]){
 
     case 'formEditComprador':
             $compradorController = new compradorController();
-            $compradorController->showFormEdit();
+            $compradorController->showFormEdit($compradorbyid);
             $id_comprador = $params[1];
             $compradorController->editComprador($id_comprador);
             break;
+
+        case 'formEditCompradores':
+              $compradorController = new compradorController();
+              $id_comprador = $params[1];
+              $compradorController->formEditComprador($id_comprador);
+                break;
 
 
          default:

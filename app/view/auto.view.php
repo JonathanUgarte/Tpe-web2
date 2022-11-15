@@ -17,7 +17,8 @@ class autoView{
     }
 
 
-function showFormEdit(){
+function showFormEdit($autosbyid){
+    $this->smarty->assign('autosbyid', $autosbyid);
     $this->smarty->display('formEdit.tpl');
 
 }

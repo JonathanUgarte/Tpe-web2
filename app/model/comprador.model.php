@@ -47,7 +47,10 @@ public function updateComprador($id_comprador, $nombre, $email) {
     
 }
 function getAutosAndCompradores($selected){
-    $query = $this->db->prepare("SELECT * FROM autos a INNER JOIN  comprador b ON a.id_comprador = b.id_comprador WHERE a.id_comprador=?");
+    $query = $this->db->prepare("SELECT * 
+                                 FROM autos a 
+                                 INNER JOIN  comprador b ON a.id_comprador = b.id_comprador 
+                                 WHERE a.id_comprador=?");
     $query->execute(array($selected));
     $autosbycomprador = $query->fetchAll(PDO::FETCH_OBJ);
 

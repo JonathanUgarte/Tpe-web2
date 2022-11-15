@@ -28,7 +28,7 @@
     <td ><a class="btn btn-secondary mt-0" href='detalle/{$autos->id}' type='button'>Detalle</a></td>
     {if $logged}
     <td ><a class="btn btn-danger mt-0" href='delete/{$autos->id}' type='button'>Eliminar</a></td>
-    <td ><a class="btn btn-success mt-0"   href='formEdit/{$autos->id}' type='button'>Editar</a></td>
+    <td ><a class="btn btn-success mt-0"   href='formEditAutomovil/{$autos->id}' type='button'>Editar</a></td>
   {/if}
   
     </tr>

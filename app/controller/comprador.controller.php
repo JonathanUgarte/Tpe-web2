@@ -39,9 +39,14 @@ function deleteComprador($id_comprador) {
   header("Location: " . BASE_URL. "compradores");
 }
 
-function showFormEdit(){
+function showFormEdit($compradorbyid){
   session_start();
-  $this->view->showFormEdit();
+  $this->view->showFormEdit($compradorbyid);
+}
+function formEditComprador($id_comprador)
+{ //Traigo los datos de este id y los inserto el en form
+    $compradorbyid = $this->model->getCompradorbyid($id_comprador);
+    $this->view->showFormEdit($compradorbyid);
 }
 
 public function editComprador($id_comprador) {
